@@ -117,8 +117,11 @@ function play()
                 tempContext.fillText(data["values"][1], 444, 420);
                 tempContext.font = '24px times';
                 tempContext.fillText(data["values"][2], 444, 445);
-                
-                imageTransition(0, data["values"][0])
+                if (data["values"] != 0){
+                    imageTransition(0, data["values"][0])
+                }else{
+                    context.drawImage(tempContext)
+                }
                 last_image = canvas
                 console.log("waiting and drawing " + data["values"][0] * 1000 + "millis...")
                 setTimeout(() => {
