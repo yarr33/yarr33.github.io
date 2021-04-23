@@ -120,7 +120,7 @@ function play()
                 if (data["values"][0] != 0){
                     imageTransition(0, data["values"][0])
                 }else{
-                    context.drawImage(tempContext, 0, 0)
+                    context.drawImage(tempCanvas, 0, 0)
                 }
                 last_image = canvas
                 console.log("waiting and drawing " + data["values"][0] * 1000 + "millis...")
