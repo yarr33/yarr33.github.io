@@ -8,7 +8,7 @@
 
 <body>
 
-    <h2 class="center">what how (sanctuary guardian) meme generator</h2>
+    <h2 class="center">what how (sanctuary guardian) meme generator by yarr33</h2>
 
     <div id="timeline">
 
@@ -23,7 +23,20 @@
     <div id="inspector">
         <h2>&nbsp;&nbsp;Inspector</h2>
         <div id="inspectorOptions"></div>
+        <div id="otherOptions">
+            <h2 id="exportFeedback">&nbsp;&nbsp;export</h2>
+            <br></br>
+            <button onclick="play()" id="export">EXPORT</button>
+        </div>
     </div>
+
+    <h2>How to use?</h2>
+    <p>Use the timeline above to make the meme. The first timeline object is the reaction image, and the other ones are reaction texts. When you click
+        on an object, you can edit its settings, and delete it. Using the settings you can change it's transition duration, and the delay before the 
+        transition. Every object type has unique settings, you can change the image in the image object, and change the titles in text objects. remember
+        to click "Save" after editing!<br></br>To generate your meme, simply click "generate". it might take some time, please be patient. It will automatically
+        download the produced video.
+    </p>
 
     <canvas width="888px" height="499px" id="produceCanvas"></canvas>
     <canvas width="888px" height="499px" id="produceTempCanvas"></canvas>
@@ -84,6 +97,7 @@ function play()
         if (index >= animationTimeline.length){
             console.log("stop record at " + index + "")
             stop()
+            document.getElementById("exportFeedback").innerHTML = "&nbsp;&nbsp;export"
             return
         }else{
             console.log("operation " + index + "")
@@ -132,6 +146,7 @@ function play()
         context.drawImage(base_image, 0, 0, 888, 499);
         last_image = base_image
         render()
+        document.getElementById("exportFeedback").innerHTML = "&nbsp;&nbsp;exporting..."
         animOperation(0)
     }
 }
@@ -364,6 +379,17 @@ button
     border: solid rgba(44, 44, 44, 0.055) 3px;
 }
 
+#otherOptions
+{
+    background-color: rgb(188, 255, 235);
+    width: 40%;
+    height: 90%;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    border: solid rgba(44, 44, 44, 0.055) 3px;
+}
+
 #saveButton
 {
     position: absolute;
@@ -405,6 +431,16 @@ input:not([type="file"])
 {
     width: 888px;
     height: 499px;
+}
+
+canvas{
+    display: none;
+}
+
+#export
+{
+    width: 100%;
+    height: 70%;
 }
 
 </style>
