@@ -34,31 +34,6 @@
 
 var timelineData = [{"type":"image", "source":"theDoor.jpg", "td":1}, {"type":"title","ft":"THE DOOR","st":"is haunted", "td":2, "tdd":0.3}]
 
-function produce(){
-    var capturer = new CCapture( { format: 'webm' } );
-
-    canvas = document.getElementById("produceCanvas")
-    capturer.start();
-
-    function render(){
-        requestAnimationFrame(render);
-        // rendering stuff ...
-        capturer.capture( canvas );
-    }
-
-    render()
-
-    function stop(){
-        capturer.stop();
-
-        // default save, will download automatically a file called {name}.extension (webm/gif/tar)
-        capturer.save();
-    }
-
-    setTimeout(stop, 5000);
-
-    
-}
 
 function play()
 {
@@ -87,10 +62,28 @@ function play()
     temp_image = new Image();
     temp_image.src = "temp.png"
 
+    var capturer = new CCapture( { format: 'webm' } );
+
+    capturer.start();
+
+    function render(){
+        requestAnimationFrame(render);
+        // rendering stuff ...
+        capturer.capture( canvas );
+    }
+
+    function stop(){
+        capturer.stop();
+
+        // default save, will download automatically a file called {name}.extension (webm/gif/tar)
+        capturer.save();
+    }
+
     function animOperation(index){
                 console.log(index)
         if (index >= animationTimeline.length){
             console.log("stop at " + index + "")
+            stop()
             return
         }else{
             console.log("operation " + index + "")
@@ -138,6 +131,7 @@ function play()
     base_image.onload = function(){
         context.drawImage(base_image, 0, 0, 888, 499);
         last_image = base_image
+        render()
         animOperation(0)
     }
 }
