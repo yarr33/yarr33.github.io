@@ -75,7 +75,7 @@ function play()
     temp_image = new Image();
     temp_image.src = "temp.png"
 
-    var capturer = new CCapture( { format: 'webm' } );
+    var capturer = new CCapture( { format: 'webm', framerate : 30} );
 
     capturer.start();
 
