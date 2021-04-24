@@ -245,7 +245,7 @@ function editTimelineObject(objectIndex){
         document.getElementById("inspectorOptions").innerHTML = `
         &nbsp;<b>top text: </b> <input id="firstTitle" value="`+objectData["ft"]+`"><br>
         &nbsp;<b>bottom text: </b> <input id="secondTitle" value="`+objectData["st"]+`"><br></br>
-        &nbsp;<b>transition duration (s): </b> <input id="transitionDelay" type="number" value="`+objectData["tdd"]+`""><br>
+        &nbsp;<b>transition duration (s): </b> <input id="transitionDelay" type="number" value="`+objectData["tdd"]+`"">&nbsp;(0 disables the transition)<br>
         `
     }
     document.getElementById("inspectorOptions").innerHTML += `&nbsp;<b>delay before transition (s): </b> <input id="startDelay" type="number" value="`+objectData["td"]+`"">
