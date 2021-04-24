@@ -93,7 +93,6 @@ function play()
     }
 
     function animOperation(index){
-                console.log(index)
         if (index >= animationTimeline.length){
             setTimeout(() => {
                 console.log("stop record at " + index + "")
@@ -139,7 +138,6 @@ function play()
     
     function imageTransition(step, duration){
         imageTransitionStep(step)
-        console.log(step)
         if (step < 1){
         setTimeout(() => {
             imageTransition(step + 0.01 / duration, duration)
