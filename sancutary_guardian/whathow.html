@@ -140,6 +140,8 @@ function play()
     function imageTransition(step, duration){
         imageTransitionStep(step)
         console.log(step)
+        console.log(duration)
+        console.log(0.01 * duration * 1000)
         if (step < 1){
         setTimeout(() => {
             imageTransition(step + 0.01, duration)
