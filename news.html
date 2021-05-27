@@ -1,0 +1,101 @@
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(0, 153, 255);
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(52, 191, 255);
+  color: rgb(30, 0, 197);
+}
+
+.topnav a.active {
+  background-color: hsl(199, 100%, 72%);
+  color: rgb(0, 0, 0);
+}
+
+.center {
+  display: block;
+  position: absolute;
+  left: -25%;
+  top:-25%;
+  z-index: -2;
+}
+</style>
+</head>
+<body>
+
+
+    <img class="center" src="https://wallpapersbook.com/wp-content/uploads/2020/09/nature-background-pic-23.jpg">
+
+
+<div class="topnav" style="height:5%">
+  <a class="active" onclick="document.getElementById(`all`).style.display=block;document.getElementById(`latest`).style.display=none;">News</a>
+</div>
+
+
+<div style="padding-left:0px; top: 0%; height: 95%; overflow: hidden;">
+
+
+
+<div id="all" style="padding-left:26px;padding-right:26px; top: 0%; height: 100%; background-color: rgba(229, 255, 209, 0); overflow: auto;">
+
+
+
+</div>
+
+<div id="latest" style="padding-left:26px; top: 0%; height: 100%; background-color: rgba(240, 0, 0, 0); overflow: auto;">
+<br>
+latest
+
+</div>
+
+</div></div>
+
+</body>
+
+<script>
+
+  news = [["Hello and Welcome to news!","27/5/2021",`I know not much of people know this site/interested in this site but I work on it as a hobby. However, I will
+           add more new things to this site. I will update the news here almost every week, it will be about new features if this site, or just blogs about my projects.
+           If you don't know me IRL, or by any other social media expect github, that's cool. Somehow you found me, haha.<br><br>
+           You might need more explanation about this site, how and why I created it. It all started when I read Cucumber Quest, the amazing webcomic by gigidigi. I've
+           heard about other ones as well, and then I've got inspiration for my own comic. I thought to myself, for a webcomic, you need a site. Then I thought that
+           I can share my projects and create html apps everyone can acess. I have this small site now. And yeah, I'm still thinking about creating that webcomic.`]]
+
+  function buildNews(){
+    news.forEach(neww => {
+      document.getElementById("all").innerHTML += `<br>
+                                                    <div style="padding-left:16px;padding-right:16px; padding-top:10px;top: 0%;  width: auto; background-color: rgb(247, 250, 219); overflow: auto;">
+                                                      <div style="  width: 100% ;background-color: hsl(67, 51%, 86%);">
+                                                        &nbsp;
+                                                        <b style="color:rgb(85, 85, 85)">`+neww[0]+`</b>
+                                                        <a style="margin-right: 10px; right:10px; width: 100%; font-size: 14px;color:rgb(155, 155, 155)">`+neww[1]+`</a>
+                                                      </div>
+                                                      <p style="font-size: 15px;">`+neww[2]+`</p>
+                                                    </div>`
+    });
+   
+  }
+
+  buildNews()
+
+</script>
