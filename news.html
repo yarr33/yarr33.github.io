@@ -86,7 +86,7 @@ latest
           system in brainf**k. So, I've decided that I'll challange myself coding an "entire" RPG. once I'll done coding it, I will create a new page in the site for it.`]]
 
   function buildNews(){
-    news.forEach(neww => {
+    news.reverse().forEach(neww => {
       document.getElementById("all").innerHTML += `<br>
                                                     <div style="padding-left:16px;padding-right:16px; padding-top:10px;top: 0%;  width: auto; background-color: rgb(247, 250, 219); overflow: auto;">
                                                       <div style="  width: 100% ;background-color: hsl(67, 51%, 86%);">
