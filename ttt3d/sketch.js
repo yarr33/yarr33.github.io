@@ -62,7 +62,7 @@ function setup() {
   winPositions.push([[2, 2, 2],[1, 1, 1],[0, 0, 0]])
   
   //setup font 
-  inconsolata = loadFont('/font.ttf');
+  inconsolata = loadFont('font.ttf');
   
   createCanvas(700, 700, WEBGL);
   
