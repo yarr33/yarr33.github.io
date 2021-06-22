@@ -21,7 +21,7 @@
         <div name="sideOgeneral" style="width: 70%; float: left;">
             <div name="new" class="tile" style="float: left; background-color: rgb(29, 36, 29); width: 30%; height: 20%;">
                 <div class="tileContent">
-                    <b><u>New things</u></b>
+                    <b><u style="font-size: 16px;">New things</u></b>
                     <ul style="font-size: 16px;">
                         <li><a href="/discussgen.html">discussion generator</a></li>
                     </ul>
@@ -31,15 +31,15 @@
             <div name="news" class="tile" style="float: left;  background-color: rgb(30, 215, 96); width: 22%; height: 20%;">
                 <div class="tileContent" style="margin-left:auto;margin-right:auto;text-align:center; color: black">
                     <u><a style="color: black; font-size: 25px;" href="/news.html">The News</a></u><br>
-                    <br><b style="background-color:rgb(255, 255, 255); border-radius: 4px; padding-inline: 4px; padding-bottom: 4px;">latest news:</b><br>
-                    <div style="background-color:rgb(255, 255, 255); border-radius: 4px; padding-top: 6px; padding-bottom: 6px;">
+                    <br><b style="background-color:rgb(255, 255, 255); border-radius: 4px; padding-inline: 4px; padding-bottom: 4px; font-size: 16px">latest news:</b><br>
+                    <div style="background-color:rgb(255, 255, 255); border-radius: 4px; padding-top: 6px; padding-bottom: 6px; font-size: 16px">
                     A lot of new things coming to this site!</div>
                 </div>
             </div>
             <div style="float: left;">&nbsp;</div>
             <div name="yt" class="tile" style="float: left;  background-color: rgb(255, 0, 0); width: 21%; height: 20%;">
                 <div class="tileContent" style="padding: 10px">
-                    <div style="margin-left:auto;margin-right:auto;text-align:center; padding-top: 6px;font-size: 30px;">
+                    <div style="margin-left:auto;margin-right:auto;text-align:center; padding-top: 6px;font-size: 26px">
                         <a style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; ">YouTube channel</a><br>
                     </div><br>
                     <div style="height: 30%; background-color:rgb(33,33,33); border-radius: 4px; padding: 4px;">
@@ -62,7 +62,7 @@
             <div name="about" class="tile" style="color:rgb(57, 68, 7);float: left;  background: linear-gradient(90deg, rgb(255, 254, 192), rgb(255, 191, 117)); width: 21%; height: 20%;">
                 <div class="tileContent" style="padding: 10px">
                     <b><u style="font-size: 20px;">About me</u></b><br>
-                    <b>I'm yarr33, a cat or a dog (still haven't decided). I speak some programming languages. I'm a python native speaker.</b>
+                    <b style="font-size: 16px;">I'm yarr33, a cat or a dog (still haven't decided). I speak some programming languages. I'm a python native speaker.</b>
                 </div>
             </div>
             <div style="float: left;">&nbsp;</div>
@@ -78,7 +78,7 @@
             <div name="about" class="tile" style="color:rgb(3, 4, 48);float: left;  background: linear-gradient(100deg, rgb(0, 235, 235), rgb(13, 137, 238)); width: 40%; height: 20%;">
                 <div class="tileContent" style="padding: 10px">
                     <b style="font-size: 20px;">More stuff</b><br>
-                    <a href="/sancutary_guardian">Sanctuary guardian meme generator</a>
+                    <a style="font-size: 18px;" href="/sancutary_guardian">Sanctuary guardian meme generator</a>
                 </div>
             </div>
             
@@ -101,6 +101,24 @@
     </div>
 
 </body>
+
+<script>
+
+    var all = document.getElementsByTagName("*");
+
+    for (var i=0, max=all.length; i < max; i++) {
+        size = all[i].style.fontSize
+        if (size != ""){
+            all[i].style.fontSize = parseInt(size.replace("px","")) / 18.58 + "vw"
+        }
+        
+        if (all[i].style.padding != ""){
+            all[i].style.padding = parseInt(all[i].style.padding.replace("px","")) / 18.58 + "vw"
+        }
+
+    }
+
+</script>
 
 <style>
     
