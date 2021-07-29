@@ -1,125 +1,232 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script onload="init()">
 
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  overflow: hidden;
-}
+function init(){
 
-.topnav {
-  overflow: hidden;
-  background-color: rgb(0, 153, 255);
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: rgb(52, 191, 255);
-  color: rgb(30, 0, 197);
-}
-
-.topnav a.active {
-  background-color: hsl(199, 100%, 72%);
-  color: rgb(0, 0, 0);
-}
-
-.center {
-  display: block;
-  position: absolute;
-  left: -25%;
-  top:-25%;
-  z-index: -2;
-}
-</style>
-</head>
-<body>
-
-
-    <img class="center" src="b.jpg">
-
-
-<div class="topnav" style="height:5%">
-  <a class="active" onclick="document.getElementById(`all`).style.display=block;document.getElementById(`latest`).style.display=none;">News</a>
-</div>
-
-
-<div style="padding-left:0px; top: 0%; height: 95%; overflow: hidden;">
-
-
-
-<div id="all" style="padding-left:26px;padding-right:26px; top: 0%; height: 100%; background-color: rgba(229, 255, 209, 0); overflow: auto;">
-
-
-
-</div>
-<a id="somecontent">
-  
-  NEWS YARR33 NEWS SITE NEWS
-  
-  I HAVE DECIDED I'M MAKING AN TEXT BASED RPG USING BRAINF**K 28/5/2021
-  Hello and Welcome to news! 27/5/2021
-  
-  </a>
-
-</div></div>
-
-</body>
-
-<script>
-
-  news = [["Hello and Welcome to news!","27/5/2021",`I know not much of people know this site/interested in this site but I work on it as a hobby. However, I will
-           add more new things to this site. I will update the news here almost every week, it will be about new features if this site, or just blogs about my projects.
-           If you don't know me IRL, or by any other social media expect github, that's cool. Somehow you found me, haha.<br><br>
-           You might need more explanation about this site, how and why I created it. It all started when I read Cucumber Quest, the amazing webcomic by gigidigi. I've
-           heard about other ones as well, and then I've got inspiration for my own comic. I thought to myself, for a webcomic, you need a site. Then I thought that
-           I can share my projects and create html apps everyone can acess. I have this small site now. And yeah, I'm still thinking about creating that webcomic.`],
-          ["I HAVE DECIDED I'M MAKING AN TEXT BASED RPG USING BRAINF**K","28/5/2021",`Esolangs are pretty cool. Well they melt my brain but it's still fun to
-          use them. I've got <a href="https://www.youtube.com/truttle1">truttle1</a> in my recommendations in youtube, and watched his entire Esolabyrinth series, where
-          every episode he picks an esolang and programs something cool with it. I recommend watching it because it's cool. In the first episode, he made a battle
-          system in brainf**k. So, I've decided that I'll challange myself coding an "entire" RPG. once I'll done coding it, I will create a new page in the site for it.`],
-         ["Tic Tac Toe 3d","8/6/2021",`just had a random idea to make tic tac toe 3d, where you place X's or O's inside a cube built of more cubes... however,
-         there's a ton of ways to win. unfortunately... the one who started playing is the one who won. that's my fault. if you want to play it its here: <a href="https://yarr33.github.io/ttt3d">here</a> `],
-         ["A lot of new things coming to this site!","17/6/2021",`The summer is here, that means I have a lot of free time. I will add a lot of stuff to my site.
-         A new small and sick word game will be added soon, and a major update for the dicussiongen will land. It will have a lot more things to talk about. Well that's all
-         I have planned for now, stay tuned for more new things here!`],
-         ["News now have rss!","10/7/2021",`I just added RSS for news, and you will be able to follow and get notified of any new news here! To get notified, use 
-         an RSS reader. You might want to get notifications on your mobile phone, so you can use Pluma RSS Reader, an app for android. You can also use Feeder, a chrome extension
-         (that works on any browser based on the chromium API) <a href="https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp">get it here</a><br>
-         Then, add the RSS url <b>https://github.com/yarr33/yarr33.github.io/commits/main/news.html.atom</b> and that's it. (NOTE: Because of me being dumb, clicking on the 
-         notification will lead to the github commit. instead just open the news page!)`],
-         ["I found my old programs!","16/7/2021",`I'm programming for a long time already (tbh I don't know if almost 4 years is a long time). Started with C#/arduino, went through brainf**k and then decided to 
-         learn python. yeah, python is my favourite programming language I commonly use. Guess what? I found a lot of python programs I wrote a long time ago. And the best part is that I will upload them to github.
-         I won't upload a program that does not work properly, so I will fix some of them. If you code in python, keep in mind, I'm coding a lot better than back then. If you see a ton of globals
-         and very <b>very</b> dumb algorithms - please forgive my past self. <br><br>
-         Anyways. recently I uploaded only one of these programs. It picks a random music file from your computer and plays it. Then again. And again. I remember that I used to code
-         while it was running in the background. Sadly, I don't have a lot of music files on my computer. Maybe some of you do. If you want to use it download the code <a href="https://github.com/yarr33/good-ol-codes/blob/main/randomMusic.py">here</a>
-         and make sure you have pygame installed. If you don't, to get pygame enter <b>py -m pip install pygame</b> in cmd on windows, or enter <b>sudo apt-get install python-pygame</b> in the terminal on linux (I'm not sure, I'm not
-         a linux user, but I'm probably going to be (; )<br><br>While writing this post, a random music file is playing in the background...`]]
-
-  function buildNews(){
-    news.reverse().forEach(neww => {
-      document.getElementById("all").innerHTML += `<br>
-                                                    <div style="padding-left:16px;padding-right:16px; padding-top:10px;top: 0%;  width: auto; background-color: rgb(247, 250, 219); overflow: auto;">
-                                                      <div style="  width: 100% ;background-color: hsl(67, 51%, 86%);">
-                                                        &nbsp;
-                                                        <b style="color:rgb(85, 85, 85)">`+neww[0]+`</b>
-                                                        <a style="margin-right: 10px; right:10px; width: 100%; font-size: 14px;color:rgb(155, 155, 155)">`+neww[1]+`</a>
-                                                      </div>
-                                                      <p style="font-size: 15px;">`+neww[2]+`</p>
-                                                    </div>`
+  $('.zoomimg').on('click',function(event) {
+    element = $(event.currentTarget)
+    if (element.css("position") != 'fixed'){
+      element.css({
+          position: 'fixed',
+          top: 'calc(10% - 1000px)',
+          right: 0,
+          bottom: 0,
+          left: 'calc(10% - 1000px)',
+          zIndex: 999,
+          width: '80%',
+          border: '1000px solid #000000bb'
+      });
+      
+    }
+    else{
+      element.css({
+        position: 'inherit',
+        top: 0,
+        right: 0,
+        bottom: 0,
+        left: 0,
+        zIndex: 999,
+        width: '20%',
+        border: 'none'
     });
-   
-  }
+  }});
 
-  buildNews()
+  $('.title').on('click',function(event) {
+    element = $(event.currentTarget).parent().find("p")
+    if (element.css("display") == "block"){
+    element.css({display: 'none'})}
+      else{
+    element.css({display: 'block'})
+      }
+  });
+
+}
+
+function collapseAll(){
+  $('.title').each(function(i) {
+    element = $(this).parent().find("p")
+    element.css({display: 'none'})
+  });
+}
 
 </script>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {
+      margin: 0;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      overflow: hidden;
+    }
+
+    .zoomimg:hover {
+      transform: scale(1.01);
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: rgb(0, 153, 255);
+    }
+
+    .snippet{
+        background-color: #2c2b31;
+        border: 2px solid rgb(39, 39, 39);
+        border-radius: 3px;
+        padding: 3px;
+        color: lightgray;
+        font-family: monospace;
+        width: fit-content;
+        white-space: pre-wrap;
+    }
+    
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .topnav a:hover {
+      background-color: rgb(52, 191, 255);
+      color: rgb(30, 0, 197);
+    }
+    
+    .topnav a.active {
+      background-color: hsl(199, 100%, 72%);
+      color: rgb(0, 0, 0);
+    }
+    
+    .center {
+      display: block;
+      position: absolute;
+      left: -25%;
+      top:-25%;
+      z-index: -2;
+    }
+    </style>
+    </head>
+    <body>
+    
+    
+        <img class="center" src="b.jpg">
+    
+    
+    <div class="topnav" style="height:5%">
+      <a class="active" onclick="document.getElementById(`all`).style.display=block;document.getElementById(`latest`).style.display=none;">News</a>
+      <a onclick="collapseAll()"> collapse all </a>
+    </div>
+    
+    
+    <div style="padding-left:0px; top: 0%; height: 95%; overflow: hidden;">
+    
+    
+    
+    <div id="all" style="padding-left:26px;padding-right:26px; top: 0%; height: 100%; background-color: rgba(229, 255, 209, 0); overflow: auto;">
+    
+    
+    
+    </div>
+    <a id="somecontent">
+      
+      NEWS YARR33 NEWS SITE NEWS
+      
+      I HAVE DECIDED I'M MAKING AN TEXT BASED RPG USING BRAINF**K 28/5/2021
+      Hello and Welcome to news! 27/5/2021
+      
+      </a>
+    
+    </div></div>
+    
+    </body>
+    
+    <script>
+    
+      news = [["Hello and Welcome to news!","27/5/2021",`I know not much of people know this site/interested in this site but I work on it as a hobby. However, I will
+               add more new things to this site. I will update the news here almost every week, it will be about new features if this site, or just blogs about my projects.
+               If you don't know me IRL, or by any other social media expect github, that's cool. Somehow you found me, haha.<br><br>
+               You might need more explanation about this site, how and why I created it. It all started when I read Cucumber Quest, the amazing webcomic by gigidigi. I've
+               heard about other ones as well, and then I've got inspiration for my own comic. I thought to myself, for a webcomic, you need a site. Then I thought that
+               I can share my projects and create html apps everyone can acess. I have this small site now. And yeah, I'm still thinking about creating that webcomic.`],
+              ["I HAVE DECIDED I'M MAKING AN TEXT BASED RPG USING BRAINF**K","28/5/2021",`Esolangs are pretty cool. Well they melt my brain but it's still fun to
+              use them. I've got <a href="https://www.youtube.com/truttle1">truttle1</a> in my recommendations in youtube, and watched his entire Esolabyrinth series, where
+              every episode he picks an esolang and programs something cool with it. I recommend watching it because it's cool. In the first episode, he made a battle
+              system in brainf**k. So, I've decided that I'll challange myself coding an "entire" RPG. once I'll done coding it, I will create a new page in the site for it.`],
+             ["Tic Tac Toe 3d","8/6/2021",`just had a random idea to make tic tac toe 3d, where you place X's or O's inside a cube built of more cubes... however,
+             there's a ton of ways to win. unfortunately... the one who started playing is the one who won. that's my fault. if you want to play it its here: <a href="https://yarr33.github.io/ttt3d">here</a> `],
+             ["A lot of new things coming to this site!","17/6/2021",`The summer is here, that means I have a lot of free time. I will add a lot of stuff to my site.
+             A new small and sick word game will be added soon, and a major update for the dicussiongen will land. It will have a lot more things to talk about. Well that's all
+             I have planned for now, stay tuned for more new things here!`],
+             ["News now have rss!","10/7/2021",`I just added RSS for news, and you will be able to follow and get notified of any new news here! To get notified, use 
+             an RSS reader. You might want to get notifications on your mobile phone, so you can use Pluma RSS Reader, an app for android. You can also use Feeder, a chrome extension
+             (that works on any browser based on the chromium API) <a href="https://chrome.google.com/webstore/detail/rss-feed-reader/pnjaodmkngahhkoihejjehlcdlnohgmp">get it here</a><br>
+             Then, add the RSS url <b>https://github.com/yarr33/yarr33.github.io/commits/main/news.html.atom</b> and that's it. (NOTE: Because of me being dumb, clicking on the 
+             notification will lead to the github commit. instead just open the news page!)`],
+             ["I found my old programs!","16/7/2021",`I'm programming for a long time already (tbh I don't know if almost 4 years is a long time). Started with C#/arduino, went through brainf**k and then decided to 
+             learn python. yeah, python is my favourite programming language I commonly use. Guess what? I found a lot of python programs I wrote a long time ago. And the best part is that I will upload them to github.
+             I won't upload a program that does not work properly, so I will fix some of them. If you code in python, keep in mind, I'm coding a lot better than back then. If you see a ton of globals
+             and very <b>very</b> dumb algorithms - please forgive my past self. <br><br>
+             Anyways. recently I uploaded only one of these programs. It picks a random music file from your computer and plays it. Then again. And again. I remember that I used to code
+             while it was running in the background. Sadly, I don't have a lot of music files on my computer. Maybe some of you do. If you want to use it download the code <a href="https://github.com/yarr33/good-ol-codes/blob/main/randomMusic.py">here</a>
+             and make sure you have pygame installed. If you don't, to get pygame enter <b>py -m pip install pygame</b> in cmd on windows, or enter <b>sudo apt-get install python-pygame</b> in the terminal on linux (I'm not sure, I'm not
+             a linux user, but I'm probably going to be (; )<br><br>While writing this post, a random music file is playing in the background...`],
+             ["Graphic Ascii Python","29/7/2021",`Recently, I've started working on a python package, Gapy. It's a game engine based on ascii art. It's like pygame, but it renders text instead of pixels. You will be able to code games that will
+             be running in the console! (Well, there are several types of displays. displaying the game in the console will cause unwanted text movements because of autoscrolling.) However, I've decided to take a break and test the features I've already implemented,
+             so I coded a nice-looking version of flappy bird.<br></br>
+             <small>[by the way, you can click the image to zoom]</small>
+             <br>
+             <img style="width: 20%" class="zoomimg" src="https://cdn.discordapp.com/attachments/737943363994648617/870030313651306537/unknown.png">
+             <br><br>
+             I wrote some sprite sheets, and loaded them to my game's code. Here's the spritesheet for the bird:
+             <p class="snippet">
+\\       /
+ \\____ /  
+=—(o,o)
+  ————
+
+
+  ____   
+——(o,o)——
+  ————
+
+
+  ____    
+=—(o,o) 
+ /———— \\
+/       \\
+
+
+  ____    
+=—(x,x) 
+ /———— \\
+/       \\
+              </p>
+              <p>loading the spritesheet and drawing its sprites on the display is simple.</p><br>
+              <p class="snippet">player = gapy.spritesheet("player.txt", 4)
+gapy.draw.sprite(display, x, y, player.get(0))</p>
+             `],["A few new features to this page", "29/7/2021", `Here's some not very important information: you can now click images to zoom them, and click on post title to collapse them. you can also click
+             the "collapse all" button above<br><br> That's all lol`]]
+    
+      function buildNews(){
+        news.reverse().forEach(neww => {
+          document.getElementById("all").innerHTML += `<br>
+                                                        <div style="padding-left:16px;padding-right:16px; padding-top:10px;top: 0%;  width: auto; background-color: rgb(247, 250, 219); overflow: auto;">
+                                                          <div class="title" style="  width: 100% ;background-color: hsl(67, 51%, 86%);">
+                                                            &nbsp;
+                                                            <b style="color:rgb(85, 85, 85)">`+neww[0]+`</b>
+                                                            <a style="margin-right: 10px; right:10px; width: 100%; font-size: 14px;color:rgb(155, 155, 155)">`+neww[1]+`</a>
+                                                          </div>
+                                                          <p style="font-size: 15px;">`+neww[2]+`</p>
+                                                        </div>`
+        });
+       
+      }
+    
+      buildNews()
+      
+      
+      init()
+
+    </script>
